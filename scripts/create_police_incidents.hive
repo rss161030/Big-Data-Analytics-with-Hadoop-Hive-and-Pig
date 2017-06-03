@@ -1,0 +1,7 @@
+DROP TABLE IF EXISTS police_data;
+CREATE TABLE police_data (Year_of_Incident INT,Incident_Number_wo_Year INT,Call_911_Problem STRING,Type_of_Incident STRING,Type_of_Location STRING,Type_of_Property STRING,
+Zip_Code INT, City STRING, State STRING,Reporting_Area INT, Beat INT, Sector INT, Council_District INT,Day_of_Occ STRING, Complainant_Name STRING,Complainant_Gender STRING,Complainant_Age INT,
+Complainant_Age_at_Offense INT,Complainant_Home_Address STRING, Complainant_Apartment INT, Complainant_Zip_Code INT, Complainant_City STRING)
+ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t' lines terminated BY '\n'
+tblproperties("skip.header.line.count"="1");
+LOAD DATA LOCAL INPATH '/root/Police.tsv' OVERWRITE INTO TABLE police_data;

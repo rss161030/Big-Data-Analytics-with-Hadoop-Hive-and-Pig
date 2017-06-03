@@ -1,0 +1,10 @@
+DROP TABLE IF EXISTS total_housing_units_data_text;
+CREATE TABLE total_housing_units_data_text(
+     Zip INT,
+     Total_Hou_Units INT)
+     ROW FORMAT DELIMITED
+     FIELDS TERMINATED BY ','
+     STORED AS TEXTFILE
+     ;
+
+LOAD DATA LOCAL INPATH 'data/Housing_Data.csv' OVERWRITE INTO TABLE total_housing_units_data_text ;

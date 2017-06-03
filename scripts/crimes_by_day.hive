@@ -1,0 +1,5 @@
+set hive.cli.print.header=true;
+select Day_of_Occ AS Day,COUNT(*) As No_Of_Crimes from police_data
+WHERE Day_of_Occ IS NOT NULL
+GROUP BY Day_of_Occ
+ORDER BY No_Of_Crimes DESC;

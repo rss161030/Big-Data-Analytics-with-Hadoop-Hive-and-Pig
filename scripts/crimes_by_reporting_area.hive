@@ -1,0 +1,5 @@
+set hive.cli.print.header=true;
+select Reporting_Area,COUNT(*) As No_Of_Crimes from police_data
+WHERE Reporting_Area IS NOT NULL
+GROUP BY Reporting_Area
+ORDER BY No_Of_Crimes DESC;

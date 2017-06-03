@@ -1,0 +1,12 @@
+DROP TABLE IF EXISTS families_data_text;
+CREATE TABLE families_data_text(
+     Zip INT,
+     Total_HH INT,
+     Family_HH INT,
+     Non_Family_HH INT)
+     ROW FORMAT DELIMITED
+     FIELDS TERMINATED BY ','
+     STORED AS TEXTFILE
+     ;
+
+LOAD DATA LOCAL INPATH 'data/Families_Data.csv' OVERWRITE INTO TABLE families_data_text;

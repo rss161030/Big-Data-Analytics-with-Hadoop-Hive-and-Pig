@@ -1,0 +1,9 @@
+day	no_of_crimes
+Fri	30159
+Sat	28923
+Mon	27861
+Sun	27738
+Thu	27657
+Wed	27571
+Tue	27279
+N/A	2

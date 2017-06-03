@@ -1,0 +1,7 @@
+set hive.cli.print.header=true;
+
+SELECT temp.Zip_Code AS Zip,temp.No_Crimes AS Crimes ,theright.Total_Pop AS Pop,theright.Male_Pop AS MalePop,theright.Female_Pop AS FemalePop
+FROM
+(SELECT Zip_Code,COUNT(*) AS No_Crimes FROM police_data group by Zip_Code) temp JOIN population_data_text AS theright
+ON temp.Zip_Code = theright.Zip
+ORDER BY Crimes DESC;

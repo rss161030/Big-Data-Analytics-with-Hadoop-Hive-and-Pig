@@ -1,0 +1,12 @@
+DROP TABLE IF EXISTS HHIncome_data_text;
+CREATE TABLE HHIncome_data_text(
+     Zip INT,
+     Total_HH INT,
+     Median_HH_Income INT,
+     Average_HH_Income INT)
+     ROW FORMAT DELIMITED
+     FIELDS TERMINATED BY ','
+     STORED AS TEXTFILE
+     ;
+
+LOAD DATA LOCAL INPATH 'data/HH_Income_Data.csv' OVERWRITE INTO TABLE HHIncome_data_text;

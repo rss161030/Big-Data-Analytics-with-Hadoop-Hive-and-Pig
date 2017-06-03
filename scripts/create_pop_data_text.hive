@@ -1,0 +1,18 @@
+DROP TABLE IF EXISTS population_data_text;
+CREATE TABLE population_data_text(
+     Zip INT,
+     Total_Pop INT,
+     Male_Pop INT,
+     Female_Pop INT,
+     Male_0_21_Pop INT,
+     Male_22_59_Pop INT,
+     Male_60_Pop INT,
+     Female_0_21_Pop INT,
+     Female_22_59_Pop INT,
+     Female_60_Pop INT)
+     ROW FORMAT DELIMITED
+     FIELDS TERMINATED BY ','
+     STORED AS TEXTFILE
+     ;
+
+LOAD DATA LOCAL INPATH 'data/Population_Data.csv' OVERWRITE INTO TABLE population_data_text;
